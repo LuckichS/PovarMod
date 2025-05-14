@@ -16,6 +16,7 @@
   <Item file="%ModDir%/Items/Huskitems.xml" />
   <Item file="%ModDir%/Items/Povaritems.xml" />
   <Item file="%ModDir%/Items/food/food.xml" />
+  <Item file="%ModDir%/Items/Fabricators/Fabs.xml" />
   <Text file="%ModDir%/Language/Russian/Russian.xml" />
   <NPCConversations file="%ModDir%/Language/HHConversations_English.xml" />
 </contentpackage>
