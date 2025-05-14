@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <Item name="Brewing Kettle" identifier="he-brewkettle" tags="brewkettle,kitchen,kitchenfabricator,donttakeitems,dontsellitems" category="Machine" subcategory="Brewery" linkable="true" allowedlinks="medcabinet,locker,kitchen" description="Used to brew kegs of almost any kind of beverage. Needs power." isshootable="true" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" canflipx="true">
+        <Body width="370" height="355" density="20" />
+
+        <Upgrade gameversion="0.10.4.0">
+            <Repairable Msg="ItemMsgRepairWrench" />
+        </Upgrade>
+
+        <Price baseprice="0" sold="true">
+            <Price storeidentifier="merchantoutpost" multiplier="1.7" minavailable="0" maxavailable="1" />
+            <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="1" maxavailable="3" />
+        </Price>
+
+        <Deconstruct time="1">
+            <Item identifier="steel" amount="1" />
+            <Item identifier="titaniumaluminiumalloy" amount="3" />
+            <Item identifier="fpgacircuit" amount="2" />
+        </Deconstruct>
+
+        <Fabricate suitablefabricators="fabricator" requiredtime="1" requiresrecipe="false" amount="1">
+            <RequiredItem identifier="steel" amount="1" /> 
+        </Fabricate>
+
+        <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="256,960,64,64" origin="0.5,0.46" />
+
+        <Sprite texture="%ModDir%/Items/Fabricators/Fabricators.png" sourcerect="1,1,322,410" depth="0.797" premultiplyalpha="false" origin="0.5,0.5" />
+
+        <BrokenSprite texture="%ModDir%/Items/Fabricators/Fabricators.png" sourcerect="1,412,322,410" depth="0.796" origin="0.5,0.5" maxcondition="80" fadein="true" />
+        <BrokenSprite texture="%ModDir%/Items/Fabricators/Fabricators.png" sourcerect="1,823,322,410" depth="0.795" origin="0.5,0.5" maxcondition="0" fadein="false" />
+        
+        <Fabricator selectkey="Select" canbeselected="true" powerconsumption="250.0" msg="ItemMsgInteractSelect">
+            <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+            <StatusEffect type="InWater" target="This" condition="-0.5" />
+            <StatusEffect type="OnContaining" targettype="Contained" targets="canspoil" condition="0.05" />
+            <StatusEffect type="OnActive" targettype="This" condition="-0.05">
+            <Conditional Voltage="gt 0.5" />
+            </StatusEffect>
+        </Fabricator>
+        
+        <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+            <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+            <RequiredSkill identifier="electrical" level="55" />
+            <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+            <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+            <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+            <Affliction identifier="stun" strength="4" />
+            <Affliction identifier="burn" strength="5" />
+            </StatusEffect>
+            <RequiredItem items="screwdriver" type="Equipped" />
+            <input name="power_in" displayname="connection.powerin" />
+            <output name="condition_out" displayname="connection.conditionout" />
+        </ConnectionPanel>
+
+        <Holdable canbepicked="true" selectkey="Select" pickkey="Action" slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" attachable="true" aimable="true">
+            <RequiredItem items="wrench" type="Equipped" />
+            <StatusEffect target="This" type="OnContained">
+            <Conditional attached="false" targetitemcomponentname="Holdable" />
+            <DropContainedItems />
+            </StatusEffect>
+        </Holdable>
+
+        <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.00" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="70" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+            <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+            <RequiredSkill identifier="electrical" level="55" />
+            <RequiredItem items="screwdriver" type="Equipped" />
+            <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+            <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="30" velocitymin="0" velocitymax="20" mincondition="0.0" maxcondition="50.0" />
+            <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+            <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+            <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+            <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+            <Affliction identifier="stun" strength="4" />
+            <Affliction identifier="burn" strength="5" />
+            </StatusEffect>
+        </Repairable>
+        
+        <ItemContainer selectkey="Select" capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true">
+            <!--<Containable items="emptybottle" />-->
+        </ItemContainer>
+        <ItemContainer selectkey="Select" capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true">
+            <!--<Containable items="bottle,liquorcrate" />-->
+        </ItemContainer>
+    </Item>
