@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Conversations identifier="hhconversations" Language="English">
+  <Conversation line="I swear, that thing is still drifting in the corridor..." speaker="0" maxintensity="0.2">
+    <Conversation line="The rotting corpse in that old diver's suit?" speaker="1">
+      <Conversation line="Yeah, that one. It came in through the airlock last shift. Hasn't moved much since." speaker="0">
+        <Conversation line="What in the world does it want?" speaker="1">
+          <Conversation line="If it wants anything at all. It's just standing there, sort of swaying, drooling black sludge." speaker="0">
+            <Conversation line="Smells like the sea, but old and foul." speaker="2" allowedjobs="medicaldoctor">
+              <Conversation line="I heard clicking from it last night. Like teeth rattling or a hollow knock against its helmet." speaker="0">
+                <Conversation line="You didn't try to remove its suit, did you?" speaker="1">
+                  <Conversation line="Hell no. It's basically glued to that suit, like a shell." speaker="0">
+                    <Conversation line="Just don't get close. Might be infectious. Or worse." speaker="2">
+                      <Conversation line="Infectious? With what? Sea rot?" speaker="1" />
+                    </Conversation>
+                  </Conversation>
+                </Conversation>
+              </Conversation>
+            </Conversation>
+          </Conversation>
+        </Conversation>
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <Conversation line="We should flush it out the airlock." speaker="0" maxintensity="0.3" allowedjobs="securityofficer">
+    <Conversation line="Easier said than done. It's standing just past the junction." speaker="1">
+      <Conversation line="You want me to push a rotting corpse in a suit out of here? By hand?" speaker="2">
+        <Conversation line="Well, how else do we get rid of it?" speaker="0">
+          <Conversation line="Shoot it?" speaker="1" allowedjobs="securityofficer">
+            <Conversation line="No way. Who knows what might come spilling out. Could corrode the hull or draw something worse." speaker="2" />
+          </Conversation>
+          <Conversation line="Maybe we just leave it be. It hasn't attacked anyone." speaker="2">
+            <Conversation line="For now. But what if it decides to move? It's eerie." speaker="1" />
+          </Conversation>
+        </Conversation>
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <Conversation line="I saw it twitch. Its arm jerked upwards for a second." speaker="0" maxintensity="0.4">
+    <Conversation line="Are you sure you weren't just tired?" speaker="1">
+      <Conversation line="I know what I saw. It twitched. Like it was remembering how to move." speaker="0">
+        <Conversation line="That's unsettling. Maybe it's just settling gases inside the suit." speaker="2">
+          <Conversation line="Or maybe it's still alive in some horrible way." speaker="0">
+            <Conversation line="Alive? With half its jaw missing and that fluid dripping out? Don't be ridiculous." speaker="1">
+              <Conversation line="We're at the bottom of an ocean moon. Ridiculous is normal around here." speaker="2">
+                <Conversation line="Let's keep our tools handy." speaker="0" />
+              </Conversation>
+            </Conversation>
+          </Conversation>
+        </Conversation>
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <Conversation line="The hull creaked last night, right after I heard that clicking sound." speaker="0" minintensity="0.5">
+    <Conversation line="I heard something too. Like it was dragging a foot." speaker="1" flags="Psychosis">
+      <Conversation line="If it's moving, it's looking for something. Or someone." speaker="0">
+        <Conversation line="Don't say that. It's just a corpse." speaker="1">
+          <Conversation line="Then why does it linger? Corpses drift off, or fall to the floor. It stands." speaker="0">
+            <Conversation line="We should lock that section off." speaker="2" />
+          </Conversation>
+        </Conversation>
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <Conversation line="You think it remembers being human?" speaker="0" maxintensity="0.6">
+    <Conversation line="Who cares? It's not human now." speaker="1" speakertags="rude, tough">
+      <Conversation line="It's stuffed in that ancient suit. Maybe it's just a puppet for something else." speaker="2" allowedjobs="medicaldoctor">
+        <Conversation line="You mean like a parasite or fungus controlling it?" speaker="0">
+          <Conversation line="Could be. We know there are spores down here that cling to old suits." speaker="2">
+            <Conversation line="This is making my skin crawl." speaker="1">
+              <Conversation line="Better to be creeped out than caught unaware." speaker="0" />
+              <Conversation line="If it's fungus, can we scrape it off or burn it away?" speaker="1">
+                <Conversation line="Scrape? Burn? That might provoke it, if it can feel." speaker="2">
+                  <Conversation line="If it's just fungus, do fungi feel pain?" speaker="0">
+                    <Conversation line="We have no idea what these spores do when agitated." speaker="2">
+                      <Conversation line="I'm not eager to find out the hard way." speaker="1" />
+                    </Conversation>
+                  </Conversation>
+                </Conversation>
+              </Conversation>
+              <Conversation line="What if the spores spread to us? Could they latch onto our suits too?" speaker="0">
+                <Conversation line="Don't even suggest that. You think we could become like it?" speaker="1">
+                  <Conversation line="If the spores thrive on old suits, maybe on new ones as well." speaker="2">
+                    <Conversation line="Then we keep our suits sealed and avoid touching it." speaker="0" />
+                  </Conversation>
+                </Conversation>
+              </Conversation>
+              <Conversation line="If it was once human, does it remember language or gestures?" speaker="0">
+                <Conversation line="You want to talk to it? That's madness." speaker="1">
+                  <Conversation line="We know spores can communicate chemically. But with us?" speaker="2">
+                    <Conversation line="We're taking wild guesses. Still, a gesture might yield a reaction." speaker="0">
+                      <Conversation line="A reaction we might not survive." speaker="1" />
+                    </Conversation>
+                  </Conversation>
+                </Conversation>
+              </Conversation>
+              <Conversation line="Could the spores be some kind of defense mechanism of the suit?" speaker="2">
+                <Conversation line="A suit designed to host fungus? That's a stretch." speaker="1">
+                  <Conversation line="Still, these suits are old. We don't know their origin." speaker="0">
+                    <Conversation line="If the fungus adapted to these suits, it might be older than we think." speaker="2">
+                      <Conversation line="Ancient life using a dead human form. Disturbing." speaker="1" />
+                    </Conversation>
+                  </Conversation>
+                </Conversation>
+              </Conversation>
+              <Conversation line="Maybe we should do nothing. Just leave it be." speaker="1">
+                <Conversation line="Ignoring it could mean missing a warning. Maybe it's here to tell us something." speaker="0">
+                  <Conversation line="Tell us what? If it's not human, can it care about us?" speaker="1">
+                    <Conversation line="Could be a sign of something bigger lurking outside." speaker="2">
+                      <Conversation line="Something bigger than a suit full of fungus? I hate this place." speaker="1" />
+                    </Conversation>
+                  </Conversation>
+                </Conversation>
+              </Conversation>
+            </Conversation>
+          </Conversation>
+        </Conversation>
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <Conversation line="It drooled again. The floor is slick with that briny fluid." speaker="0" maxintensity="0.8" allowedjobs="assistant">
+    <Conversation line="Someone should clean it up." speaker="1" speakertags="rude, tough">
+      <Conversation line="Clean it up yourself! I'm not going near it." speaker="0">
+        <Conversation line="We can't just leave it to fester. That smell could spread." speaker="0">
+          <Conversation line="If we open the airlock and force some pressure change, maybe it'll drift back out." speaker="0">
+            <Conversation line="Risk blowing half our storage out too? Not worth it." speaker="1">
+              <Conversation line="Then we wait. Maybe it'll just leave the same way it came." speaker="0" />
+            </Conversation>
+          </Conversation>
+        </Conversation>
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <Conversation line="I think it's staring at me through that cracked visor." speaker="0" minintensity="1.0">
+    <Conversation line="It doesn't have eyes!" speaker="1">
+      <Conversation line="It felt like it. A kind of hollow gaze." speaker="0">
+        <Conversation line="Stop imagining things and keep moving. We have work to do." speaker="2" allowedjobs="securityofficer">
+          <Conversation line="Work? With that thing just lurking there?" speaker="1">
+            <Conversation line="We don't have a choice. Either we learn to ignore it, or we do something drastic." speaker="2">
+              <Conversation line="I can't ignore it. It's an omen. Something bad's coming." speaker="0" />
+            </Conversation>
+          </Conversation>
+          <Conversation line="Ignore it? Sure, let's pretend it's not there." speaker="1">
+            <Conversation line="Can you really pretend? It's dripping that black sludge everywhere." speaker="0">
+              <Conversation line="We clean after it leaves. If it ever leaves." speaker="2">
+                <Conversation line="And if it doesn't?" speaker="1">
+                  <Conversation line="Then we adapt. It's what we do down here." speaker="2" />
+                </Conversation>
+              </Conversation>
+            </Conversation>
+          </Conversation>
+        </Conversation>
+        <Conversation line="What if it understands us?" speaker="1">
+          <Conversation line="Understands? It's just a corpse in a suit." speaker="2">
+            <Conversation line="But what if it's listening? Could it be mimicking us somehow?" speaker="0">
+              <Conversation line="That's absurd. Still... no sudden moves." speaker="2" />
+            </Conversation>
+          </Conversation>
+        </Conversation>
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <!-- Doctors assessments -->
+  <Conversation line="I've examined the goo that has infested the crew..." speaker="0" allowedjobs="medicaldoctor" maxintensity="0.2">
+    <Conversation line="And I'm not sure what it is." speaker="0">
+      <Conversation line="If we try to remove it, we may cause it to spread further." speaker="0">
+        <Conversation line="Maybe observe it longer?" speaker="0">
+          <Conversation line="Maybe not." speaker="0" />
+        </Conversation>
+        <Conversation line="It hasn't harmed ut yet?" speaker="0">
+          <Conversation line="Yet..." speaker="0" />
+        </Conversation>
+      </Conversation>
+      <Conversation line="If these things can help, can we use it?" speaker="0">
+        <Conversation line="Or do they use us?" speaker="0" />
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <Conversation line="This 'clinging slime'—rubbery, it's stuck fast." allowedjobs="medicaldoctor" speaker="0">
+    <Conversation line="Supportive?" speaker="0">
+      <Conversation line="Or just holding on?" speaker="0">
+        <Conversation line="I can't tell." speaker="0" />
+      </Conversation>
+    </Conversation>
+  </Conversation>
+  <Conversation line="The 'goreseal' replaces stitches with foul threads." allowedjobs="medicaldoctor" speaker="0">
+    <Conversation line="It seals, sure, but do we trust it?" speaker="0" />
+  </Conversation>
+  <Conversation line="'Clotted Comfort' protects, yet it writhes under your touch." speaker="0">
+    <Conversation line="It's alive?" speaker="0">
+      <Conversation line="Or hungry?" speaker="0" />
+    </Conversation>
+  </Conversation>
+  <Conversation line="With 'Pale Breath,' the air thickens." allowedjobs="medicaldoctor" speaker="0">
+    <Conversation line="Easier breathing, but who's breathing with you?" speaker="0" />
+  </Conversation>
+  <Conversation line="'Slick Tendrils' ease movement." allowedjobs="medicaldoctor" speaker="0">
+    <Conversation line="Smooth steps, but are you steering or being steered?" speaker="0" />
+  </Conversation>
+  <Conversation line="'Meatshield's Whisper' toughens you, but the muscle isn't yours." allowedjobs="medicaldoctor" speaker="0">
+    <Conversation line="Protective?" speaker="0">
+      <Conversation line="Or possessive?" speaker="0" />
+    </Conversation>
+  </Conversation>
+</Conversations>

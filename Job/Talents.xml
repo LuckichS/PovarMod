@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+<Talent identifier="skill1">  </Talent>
+
+<Talent identifier="skill3">  </Talent>
+<Talent identifier="skill4">  </Talent>
+<Talent identifier="skill5">  </Talent>
+<Talent identifier="skill6">  </Talent>
+
+<Talent identifier="ExpBaton"> 
+  <Description tag="talentdescription.expBaton"></Description>
+  <AddedRecipe itemidentifier="expbaton"/>
+ </Talent>
+
+<Talent identifier="slasher" trackedstat="slasher_counter" trackedmax="100">
+    <Description tag="talentdescription.slasher"></Description>
+    
+    <!-- шняга для квеста -->
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="slasher_2" value="1" maxvalue="1" setvalue="true" />
+      </Abilities>
+    </AbilityGroupEffect>
+
+    <!-- изначальное увеличение урона -->
+    <!-- счетчик нарезки -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionAttackData tags="povar_knife_item"/>
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="slasher_counter" value="1" removeondeath="false" />
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="2"/>
+      </Abilities>
+    </AbilityGroupEffect>
+
+    <!-- увеличение урона при порезках -->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionHasPermanentStat statidentifier="slasher_counter" min="5"/>
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="100"/>
+      </Abilities>
+    </AbilityGroupEffect>
+
+
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionHasPermanentStat statidentifier="slasher_counter" min="2"/>
+        <AbilityConditionHasPermanentStat statidentifier="slasher_2" min="1"/>
+      </Conditions>
+      <Abilities>
+
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type = "onAbility" target = "This">
+              <GiveExperience amount="5000" />
+              <PermanentStatValue statidentifier="slasher_counter_2" value="0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+        <CharacterAbilityResetPermanentStat statidentifier="slasher_2" />
+      </Abilities>
+    </AbilityGroupEffect>
+    
+
+</Talent>
+
+<Talent identifier="hannibal">
+    <Description tag="talentdescription.hannibal">
+      <Replace tag="[stun]" value="15" color="gui.green" />
+      <Replace tag="[damage]" value="15" color="gui.green" />
+      <Replace tag="[healing]" value="50" color="gui.green" />
+    </Description>
+</Talent>
+
+<Talent identifier="sushimaster">
+    <Description tag="talentdescription.sushimaster">
+      <Replace tag="[stun]" value="15" color="gui.green" />
+      <Replace tag="[damage]" value="15" color="gui.green" />
+      <Replace tag="[healing]" value="50" color="gui.green" />
+    </Description>
+</Talent>
+
+<Talent identifier="fearofinevitable">
+    <Description tag="talentdescription.fearofinevitable">
+      <Replace tag="[stun]" value="15" color="gui.green" />
+      <Replace tag="[damage]" value="15" color="gui.green" />
+      <Replace tag="[healing]" value="50" color="gui.green" />
+    </Description>
+</Talent>
+
+<Talent identifier="barkbeetle">
+    <Description tag="talentdescription.barkbeetle">
+      <Replace tag="[stun]" value="15" color="gui.green" />
+      <Replace tag="[damage]" value="15" color="gui.green" />
+      <Replace tag="[healing]" value="50" color="gui.green" />
+    </Description>
+</Talent>
+
+<Talent identifier="vetka2skill1"></Talent>
+<Talent identifier="vetka2skill2"></Talent>
+<Talent identifier="vetka2skill3"></Talent>
+
+
+<Talent identifier="vetka3skill1"></Talent>
+<Talent identifier="vetka3skill2"></Talent>
+<Talent identifier="vetka3skill3"></Talent>
+
+
+  <Talent identifier="symbiosis">
+    <Description tag="talentdescription.symbiosis">
+      <Replace tag="[stun]" value="15" color="gui.green" />
+      <Replace tag="[damage]" value="15" color="gui.green" />
+      <Replace tag="[healing]" value="50" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,5" sheetelementsize="128,128" />
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
+              <Affliction identifier="HHSymbiosisBuff" amount="100" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="feelsweirdman">
+    <Description tag="talentdescription.feelsweirdman">
+      <Replace tag="[bleedResistance]" value="30" color="gui.green" />
+      <Replace tag="[bleedWound]" value="100" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,3" sheetelementsize="128,128" />
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
+              <Affliction identifier="HHFeelsWeirdManBuff" amount="100" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="bestfriends">
+    <Description tag="talentdescription.bestfriends1">
+      <Replace tag="[burn]" value="30" color="gui.green" />
+      <Replace tag="[psychosis]" value="100" color="gui.green" />
+    </Description>
+    <Description tag="talentdescription.bestfriends2">
+      <Replace tag="[heal]" value="12" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,1" sheetelementsize="128,128" />
+    <AbilityGroupInterval interval="1">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
+              <Affliction identifier="HHBestFriendsBuff" amount="100" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Ally">
+          <Conditional group="eq human" />
+        </AbilityConditionCharacter>
+        <AbilityConditionAttackData weapontype="noweapon" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityGiveAffliction affliction="HHHealBuff" strength="15" setvalue="true" />
+        <CharacterAbilityReduceAffliction affliction="oxygenlow" amount="200" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="lackofheart">
+    <Description tag="talentdescription.lackofheart1">
+      <Replace tag="[oxygen]" value="50" color="gui.green" />
+    </Description>
+    <Description tag="talentdescription.lackofheart2">
+      <Replace tag="[heal]" value="15" color="gui.green" />
+      <Replace tag="[items]" value="entityname.huskeggs,entityname.huskeggsbasic" color="gui.yellow" />
+    </Description>
+    <Description tag="talentdescription.lackofheart3">
+      <Replace tag="[item]" value="entityname.hh_eggextractor" color="gui.yellow" />
+      <Replace tag="[egg]" value="entityname.huskeggs" color="gui.yellow" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="6,6" sheetelementsize="128,128" />
+    <AbilityGroupInterval interval="1">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
+              <Affliction identifier="HHLackOfHeartBuff" amount="100" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnApplyTreatment">
+      <Conditions>
+        <AbilityConditionItem identifiers="huskeggs,huskeggsbasic" />
+        <AbilityConditionCharacter targettype="Ally,NotSelf" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect tags="medical" type="OnAbility" target="Limb" duration="10.0" Comparison="And">
+              <Conditional huskinfection="lt 40.0" />
+              <Conditional husksymbiosis="lt 1.0" />
+              <ReduceAffliction type="bleeding" amount="2" />
+              <ReduceAffliction type="burn" amount="2" />
+              <ReduceAffliction type="damage" amount="2" />
+              <Affliction identifier="psychosis" amount="2" />
+              <Affliction identifier="HHHealBuff" amount="0.1" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnApplyTreatment">
+      <Conditions>
+        <AbilityConditionItem identifiers="huskeggs,huskeggsbasic" />
+        <AbilityConditionCharacter targettype="Ally" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect tags="medical" type="OnAbility" target="Limb" duration="5.0">
+              <ReduceAffliction type="bleeding" amount="2" />
+              <ReduceAffliction type="burn" amount="2" />
+              <ReduceAffliction type="damage" amount="2" />
+              <Affliction identifier="HHHealBuff" amount="0.1" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="hh_eggextractor" />
+  </Talent>
+  <Talent identifier="slipstreamsecretion">
+    <Description tag="talentdescription.slipstreamsecretion1">
+      <Replace tag="[speed]" value="30" color="gui.green" />
+    </Description>
+    <Description tag="talentdescription.slipstreamsecretion2">
+      <Replace tag="[damage]" value="15" color="gui.red" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,2" sheetelementsize="128,128" />
+    <AbilityGroupInterval interval="1">
+      <Conditions>
+        <AbilityConditionInWater />
+        <AbilityConditionAllyNearby distance="600" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="true">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
+              <Affliction identifier="HHSlipstreamSecretionBuff" amount="5" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionInWater />
+        <AbilityConditionAllyNearby distance="1000" truthywhen="NoCharacterMatches" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="0.15" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="guardianangel">
+    <Description tag="talentdescription.guardianangel">
+      <Replace tag="[damage]" value="10" color="gui.green" />
+      <Replace tag="[duration]" value="5" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,2" sheetelementsize="128,128" />
+    <AbilityGroupInterval interval="1">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" disabledeltatime="true">
+              <Affliction identifier="guarded" amount="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="guarded" minimumpercentage="1.0" />
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" ignoreOwnAttacks="true" weapontype="NoWeapon,Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Affliction identifier="HHGuardianAngelBuff" amount="100" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnAttackedResult">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This">
+              <ReduceAffliction identifier="guarded" strength="10.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- When you receive damage, all nearby players take 10% sless damage -->
+  </Talent>
+  <Talent identifier="overcooked">
+    <Description tag="talentdescription.overcooked">
+      <Replace tag="[damage]" value="15" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="6,4" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.15" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="refeeding">
+    <Description tag="talentdescription.refeeding">
+      <Replace tag="[healing]" value="100" color="gui.green" />
+      <Replace tag="[damage]" value="25" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons4.png" sheetindex="5,2" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Enemy" />
+        <AbilityConditionAttackData weapontype="noweapon" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="0.25" />
+        <CharacterAbilityApplyStatusEffects applytoself="true">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" stackable="false" disabledeltatime="true">
+              <Affliction identifier="HHHealBuff" strength="5" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="rupturedskin">
+    <Description tag="talentdescription.rupturedskin">
+      <Replace tag="[chance]" value="50" color="gui.green" />
+      <Replace tag="[bleed]" value="20" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,5" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" ignoreOwnAttacks="true" weapontype="Melee" />
+        <AbilityConditionServerRandom randomchance="0.5" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAttacker>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" targetlimb="Torso" delay="0.1" disabledeltatime="true" duration="0.5">
+              <Affliction identifier="bleeding" amount="0.4" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAttacker>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!-- When you take damage, you have a 10% chance to cause bleeding in the attacker -->
+  </Talent>
+  <Talent identifier="toxiceggs">
+    <Description tag="talentdescription.toxiceggs">
+      <Replace tag="[damage]" value="75" color="gui.green" />
+      <Replace tag="[acidDamage]" value="3" color="gui.green" />
+      <Replace tag="[bleedDamage]" value="1" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,0" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Enemy" />
+        <AbilityConditionAttackData weapontype="noweapon" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="0.75" />
+        <CharacterAbilityModifyAttackData>
+          <afflictions>
+            <Affliction identifier="acidburn" amount="3" />
+            <Affliction identifier="bleeding" amount="1" />
+          </afflictions>
+        </CharacterAbilityModifyAttackData>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="toxicstingers">
+    <Description tag="talentdescription.toxicstingers">
+      <Replace tag="[damage]" value="75" color="gui.green" />
+      <Replace tag="[acidDamage]" value="3" color="gui.green" />
+      <Replace tag="[bleedDamage]" value="1" color="gui.green" />
+      <Replace tag="[item]" value="entityname.huskstinger" color="gui.orange" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="1,4" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Enemy" />
+        <AbilityConditionAttackData itemidentifier="huskstinger" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="0.75" />
+        <CharacterAbilityModifyAttackData>
+          <afflictions>
+            <Affliction identifier="acidburn" amount="3" />
+            <Affliction identifier="bleeding" amount="1" />
+          </afflictions>
+        </CharacterAbilityModifyAttackData>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="pheromones">
+    <Description tag="talentdescription.pheromones" />
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,6" sheetelementsize="128,128" />
+    <AbilityGroupInterval>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="300" allowself="true">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <Affliction identifier="disguisedashusk" amount="1000" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <!-- Exosuit -->
+  <!-- 1. -->
+  <Talent identifier="weldedfibers">
+    <Description tag="talentdescription.weldedfibers">
+      <Replace tag="[skill]" value="20" color="gui.green" />
+      <Replace tag="[speed]" value="100%" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,4" sheetelementsize="128,128" />
+    <AbilityGroupEffect>
+      <Abilities>
+        <CharacterAbilityGivePermanentStat stattype="MechanicalSkillBonus" statidentifier="weldedfibers" value="20" setvalue="true" removeondeath="false" />
+        <CharacterAbilityGivePermanentStat stattype="MechanicalRepairSpeed" statidentifier="weldedfibers" value="1" setvalue="true" removeondeath="false" />
+        <CharacterAbilityGivePermanentStat stattype="ElectricalSkillBonus" statidentifier="junctionjunkie" value="20" setvalue="true" removeondeath="false" />
+        <CharacterAbilityGivePermanentStat stattype="ElectricalRepairSpeed" statidentifier="junctionjunkie" value="1" setvalue="true" removeondeath="false" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="carnophage">
+    <Description tag="talentdescription.carnophage">
+      <Replace tag="[healing]" value="200" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,6" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Enemy,Monster">
+          <Conditional IsMachine="false" />
+          <Conditional IsHusk="false" />
+        </AbilityConditionCharacter>
+        <AbilityConditionAttackData weapontype="Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" stackable="false" disabledeltatime="true">
+              <Affliction identifier="HHHealBuff" strength="10" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- 2. -->
+  <Talent identifier="hingedcarapace">
+    <Description tag="talentdescription.hingedcarapace">
+      <Replace tag="[chance]" value="10" color="gui.orange" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,2" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionServerRandom randomchance="0.1" />
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" ignoreOwnAttacks="true" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-1" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="moldedhide">
+    <Description tag="talentdescription.moldedhide">
+      <Replace tag="[damage]" value="25" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,6" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" ignoreOwnAttacks="true" weapontype="Ranged" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.25" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- 3. -->
+  <Talent identifier="metallinedveins">
+    <Description tag="talentdescription.metallinedveins1" />
+    <Description tag="talentdescription.metallinedveins2">
+      <Replace tag="[item]" value="entityname.aluminium" color="gui.orange" />
+      <Replace tag="[heal]" value="15" color="gui.green" />
+    </Description>
+    <Description tag="talentdescription.metallinedveins3">
+      <Replace tag="[item]" value="entityname.steel" color="gui.orange" />
+      <Replace tag="[heal]" value="20" color="gui.green" />
+    </Description>
+    <Description tag="talentdescription.metallinedveins4">
+      <Replace tag="[item]" value="entityname.titaniumaluminiumalloy" color="gui.orange" />
+      <Replace tag="[heal]" value="45" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,3" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnApplyTreatment">
+      <Conditions>
+        <AbilityConditionItem identifiers="aluminium" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect tags="medical" type="OnAbility" target="Limb" disabledeltatime="true" interval="0.5" duration="10.0">
+              <ReduceAffliction type="damage" amount="2.25" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnApplyTreatment">
+      <Conditions>
+        <AbilityConditionItem identifiers="steel" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect tags="medical" type="OnAbility" target="Limb" disabledeltatime="true" interval="0.5" duration="10.0">
+              <ReduceAffliction type="damage" amount="1" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnApplyTreatment">
+      <Conditions>
+        <AbilityConditionItem identifiers="titaniumaluminiumalloy" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect tags="medical" type="OnAbility" target="Limb" disabledeltatime="true" interval="0.5" duration="10.0">
+              <ReduceAffliction type="damage" amount="0.75" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="bioelasticmuscles">
+    <Description tag="talentdescription.bioelasticmuscles">
+      <Replace tag="[damage]" value="100" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,4" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionAttackData weapontype="NoWeapon,Melee" />
+        <AbilityConditionCharacter targettype="Enemy">
+          <Conditional WasFullHealth="true" />
+        </AbilityConditionCharacter>
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="1" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- 4. -->
+  <Talent identifier="exosuit_transform">
+    <Description tag="talentdescription.exosuit_transform"></Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,6" sheetelementsize="128,128" />
+  </Talent>
+  <!-- Prowler -->
+  <!-- 1. -->
+  <Talent identifier="prowler_transform">
+    <Description tag="talentdescription.prowler_transform"></Description>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,3" sheetelementsize="128,128" />
+  </Talent>
+  <!-- 2. -->
+  <Talent identifier="prowler_speeddemon">
+    <Description tag="talentdescription.prowler_speeddemon">
+      <Replace tag="[reducedSpeed]" value="10" color="gui.red" />
+      <Replace tag="[speed]" value="75" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="5,4" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="MovementSpeed" value="-0.1" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupInterval>
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="haste" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="MovementSpeed" value="0.75" />
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="prowler_tendonflex">
+    <Description tag="talentdescription.prowler_tendonflex">
+      <Replace tag="[speed]" value="15" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,0" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="MovementSpeed" value="0.15" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- 3. -->
+  <Talent identifier="prowler_hydrodynamics">
+    <Description tag="talentdescription.prowler_hydrodynamics">
+      <Replace tag="[speed]" value="15" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,2" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="SwimmingSpeed" value="1.5" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- 4. -->
+  <Talent identifier="prowler_serratedclaws">
+    <Description tag="talentdescription.prowler_serratedclaws">
+      <Replace tag="[bleed]" value="0.5" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,2" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Enemy" />
+        <AbilityConditionAttackData weapontype="noweapon" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="1" />
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" delay="0.05" stackable="true">
+              <Conditional mass="lt 3000" />
+              <Affliction identifier="bleeding" amount="0.5" />
+              <Affliction identifier="bleeding" amount="0.25" MultiplyByMaxVitality="true" />
+            </StatusEffect>
+          </StatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" delay="0.05" stackable="true">
+              <Conditional mass="gte 3000" />
+              <Affliction identifier="bleeding" amount="0.5" />
+              <Affliction identifier="bleeding" amount="0.07" MultiplyByMaxVitality="true" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="prowler_swolearms">
+    <Description tag="talentdescription.prowler_swolearms">
+      <Replace tag="[damage]" value="200" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="5,3" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Enemy" />
+        <AbilityConditionAttackData weapontype="NoWeapon" />
+        <AbilityConditionHasAffliction afflictionidentifier="strengthen" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="2" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- Chimera -->
+  <!-- 1. -->
+  <Talent identifier="chimera_crushinglimbs">
+    <Description tag="talentdescription.chimera_crushinglimbs">
+      <Replace tag="[chance]" value="25" color="gui.orange" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,4" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionAttackData weapontype="NoWeapon,Melee" />
+        <AbilityConditionHasAffliction afflictionidentifier="strengthen" />
+        <AbilityConditionServerRandom randomchance="0.25" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" delay="0.05" stackable="true">
+              <Conditional mass="lt 500" />
+              <Affliction identifier="stun" strength="100" duration="10" />
+              <Explosion range="100.0" force="10" shockwave="false" flames="false" smoke="false" underwaterbubble="false" camerashake="6.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="chimera_feralstance">
+    <Description tag="talentdescription.chimera_feralstance">
+      <Replace tag="[duration]" value="5" color="gui.orange" />
+      <Replace tag="[damageReduction]" value="40" color="gui.green" />
+      <Replace tag="[stunResistance]" value="40" color="gui.green" />
+      <Replace tag="[speedPenalty]" value="20" color="gui.red" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="6,2" sheetelementsize="128,128" />
+    <AbilityGroupInterval interval="1">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" disabledeltatime="true">
+              <Affliction identifier="HHFeralStance" amount="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="HHFeralStance" minimumpercentage="1.0" />
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" ignoreOwnAttacks="true" weapontype="NoWeapon,Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Affliction identifier="HHFeralStanceBuff" amount="100" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnAttackedResult">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This">
+              <ReduceAffliction identifier="HHFeralStance" strength="10.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- 2. -->
+  <Talent identifier="chimera_bonemoldedplating">
+    <Description tag="talentdescription.chimera_bonemoldedplating">
+      <Replace tag="[deflectionChance]" value="10" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,2" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" ignoreOwnAttacks="true" />
+        <AbilityConditionServerRandom randomchance="0.1" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-1" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="chimera_chitinoushusk">
+    <Description tag="talentdescription.chimera_chitinoushusk">
+      <Replace tag="[reduction]" value="80" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,2" sheetelementsize="128,128" />
+    <AbilityGroupEffect>
+      <Abilities>
+        <CharacterAbilityGiveResistance resistanceid="burn" multiplier="0.2" />
+        <CharacterAbilityGiveResistance resistanceid="bleeding" multiplier="0.2" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- 3. -->
+  <Talent identifier="chimera_gravemight">
+    <Description tag="talentdescription.chimera_gravemight">
+      <Replace tag="[threshold]" value="30" color="gui.yellow" />
+      <Replace tag="[duration]" value="5" color="gui.yellow" />
+      <Replace tag="[damage]" value="200" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="6,2" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.3" />
+        <AbilityConditionCharacter targettypes="Enemy" />
+        <AbilityConditionAttackData weapontype="NoWeapon,Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="2" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="chimera_horridvisage">
+    <Description tag="talentdescription.chimera_horridvisage">
+      <Replace tag="[reducedAttackSpeed]" value="50" color="gui.green" />
+    </Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="0,2" sheetelementsize="128,128" />
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionAttackData weapontype="NoWeapon,Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Affliction identifier="HHTerror" amount="100" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- 4. -->
+  <Talent identifier="chimera_transform">
+    <Description tag="talentdescription.chimera_transform"></Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="0,7" sheetelementsize="128,128" />
+    <AddedRecipe itemidentifier="hh_brainslug" />
+  </Talent>
+  <Talent identifier="EndOfTheLine">
+    <Description tag="talentdescription.EndOfTheLine"></Description>
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="0,0" sheetelementsize="1,1" />
+  </Talent>
+</Talents>

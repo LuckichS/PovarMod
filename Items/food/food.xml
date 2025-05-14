@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+   <!-- Name: Exp Baton -->
+  <!--  -->
+  <!-- *************************************************************************************************************************************************************************** -->
+  <ExpBaton name="" identifier="expbaton" category="Medical,Material,Food" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,chem,medical" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab,piratemedcab" amount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="abandonedcrewcab,piratecrewcab" minamount="1" maxamount="2" spawnprobability="0.15" />
+    <Price baseprice="200" sold="false">
+      <Price storeidentifier="merchantnightclub" minavailable="1" sold="true" />
+    </Price>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="200" fabricationlimitmin="5" fabricationlimitmax="10"/>
+    
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="1" />
+      <RequiredItem identifier="expbaton" amount="1" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="titaniumaluminiumalloy" amount="2" />
+      <Item identifier="physicorium" />
+    </Deconstruct>
+
+    <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas2.png" sourcerect="64,768,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/food/Foods.png" sourcerect="315,452,30,57" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="20" />
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0">
+        <Sound file="Content/Items/Medical/ITEM_drinkingLoop.ogg" range="250" loop="true" />
+
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="This,Character">
+        <Conditional Condition="lte 1" />
+        <Use/>
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <ParticleEmitter particle="juicedrop" particlespersecond="10" scalemin="1" scalemax="1.5" distancemin="20" distancemax="25" anglemin="80" anglemax="100" velocitymin="40" velocitymax="60" copyentityangle="true" lifetimemultiplier="0.10" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+        <Conditional Condition="gt 1" />
+        <Sound file="Content/Items/Medical/ITEM_drinkingQuick.ogg" range="250" />
+        
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+         <GiveExperience amount="1000000" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </ExpBaton>
+
+  <BaseMeat name="" identifier="basemeat" category="Material,Food" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,chem,medical" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+   <Upgrade gameversion="0.10.0.0" scale="0.5" />
+   <InventoryIcon texture="%ModDir%/Items/InventoryIconAtlas.png" sourcerect="512,768,64,64" origin="0.5,0.5" />
+   <Sprite texture="%ModDir%/Items/food/Foods.png" sourcerect="406,452,29,58" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="20" />
+    <Deconstruct time="5">
+      <Item identifier="expbaton" amount="2" />
+      <Item identifier="physicorium" />
+    </Deconstruct>
+
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+    </Holdable>
+  </BaseMeat>
+</Items>

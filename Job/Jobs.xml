@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jobs>
+  <Job identifier="PlayerPovarJob" maxnumber="1" allowalways="true" minkarma="30" initialcount="1" uicolor="0.364,0.247,0.827" vitalitymodifier="10" pricemultiplier="4" idlebehavior="Active">
+    <Jobicon>
+      <sprite texture="%ModDir%/Job/PlayerHuskIcons.png" sourcerect="0,0,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="%ModDir%/Job/PlayerHuskIcons.png" sourcerect="284,100,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+
+    <Skills>
+      <Skill identifier="weapons" level="5,10" primary="true" pvplevel="100" pricemultiplier="20" />
+      <Skill identifier="mechanical" level="5,10" pvplevel="50" />
+      <Skill identifier="electrical" level="5,10" pvplevel="50" />
+      <Skill identifier="medical" level="5,10" pvplevel="50" pricemultiplier="10" />
+      <Skill identifier="helm" level="5,10" pvplevel="50" />
+      <!--<Skill identifier="cooking" level="5,10" pvplevel="50" />-->
+    </Skills>
+    <ItemSet>
+      <Item identifier="povar_knife" equip="false" outfit="false" />
+      <Item identifier="expbaton" equip="false" outfit="false"  amount="8"/>
+      <Item identifier="basemeat" equip="false" outfit="false"  amount="8"/>
+      <Item identifier="coalitionmedal" equip="false" outfit="false"/>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="%ModDir%/Job/PlayerHuskIcons.png" sourcerect="256,0,100,100" offset="0,0" />
+      </PreviewSprites>
+    </ItemSet>
+    <AutonomousObjectives>
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="1" />
+      <Order identifier="pumpwater" option="pumpout" prioritymodifier="1" />
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="repairsystems" prioritymodifier="0.5" />
+      <Order identifier="fixleaks" prioritymodifier="0.5" />
+      <Order identifier="operatereactor" options="powerup" prioritymodifier="0.4" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="fightintruders" />
+      <Order identifier="rescue" />
+    </AppropriateOrders>
+  </Job>
+</Jobs>

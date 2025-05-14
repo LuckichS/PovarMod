@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<override>
+  <Character specifiertags="true" SpeciesName="Husk_player_exosuit" ForceSlowClimbing="False" SpeciesTranslationOverride="husk" DisplayName="" Group="human" Humanoid="True" HasInfo="True" CanInteract="True" CanClimb="true" Husk="False" UseHuskAppendage="False" NeedsWater="False" NeedsAir="False" UseHumanAI="True" IsMachine="False" CanSpeak="False" ShowHealthBar="True" UseBossHealthBar="False" Noise="300" Visibility="300" BloodDecal="blackblood" BleedParticleAir="blackblooddrop" BleedParticleWater="blackwaterblood" BleedParticleMultiplier="1" CanEat="True" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="True" SonarDisruption="0" DistantSonarRange="0" DisableDistance="25000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
+    <names path="%ModDir%/names.xml" />
+    <ragdolls folder="default" />
+    <animations folder="default" />
+    <damageemitter drawontop="True" Particle="blackgib" AngleMin="0" AngleMax="360" ScaleMin="0.1" ScaleMax="0.3" VelocityMin="50" VelocityMax="300" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="5" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+    <gibemitter Particle="blackgib" AngleMin="0" AngleMax="360" ScaleMin="0.2" ScaleMax="0.3" VelocityMin="200" VelocityMax="500" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="5" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_attack1.ogg" State="Attack" Range="1000" Volume="1" Tags="" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_attack2.ogg" State="Attack" Range="1000" Volume="1" Tags="" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_attack3.ogg" State="Attack" Range="1000" Volume="1" Tags="" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_attack4.ogg" State="Attack" Range="1000" Volume="1" Tags="" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_damage1.ogg" State="Damage" Range="1000" Volume="1" Tags="" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_damage2.ogg" State="Damage" Range="1000" Volume="1" Tags="" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_damage3.ogg" State="Damage" Range="1000" Volume="1" Tags="" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_death1.ogg" State="Die" Range="1000" Volume="1" Tags="" />
+    <sound File="Content/Characters/Husk_exosuit/HUSKEXO_death2.ogg" State="Die" Range="1000" Volume="1" Tags="" />
+    <health minvitality="-100" Vitality="500" DoesBleed="True" CrushDepth="Infinity" UseHealthWindow="True" BleedingReduction="10" BurnReduction="0.2" HealthRegenerationWhenEating="10" StunImmunity="True" PoisonImmunity="False" PoisonVulnerability="0.4" EmpVulnerability="0" ApplyAfflictionColors="False" Immunities="">
+      <Limb name="Head">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="1,0,126,374" highlightarea="41,0,45,54" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="1,515,126,374" />
+        <VitalityMultiplier type="burn" multiplier="2.0" />
+      </Limb>
+      <Limb name="Torso">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="631,0,126,374" highlightarea="29,56,70,134" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="631,515,126,374" />
+        <VitalityMultiplier type="burn" multiplier="2.0" />
+      </Limb>
+      <Limb name="LeftArm">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="379,0,126,374" highlightarea="1,69,27,140" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="379,515,126,374" />
+        <VitalityMultiplier type="burn" multiplier="1.0" />
+      </Limb>
+      <Limb name="RightArm">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="127,0,126,374" highlightarea="100,69,27,140" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="127,515,126,374" />
+        <VitalityMultiplier type="burn" multiplier="1.0" />
+      </Limb>
+      <Limb name="LeftLeg">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="505,0,126,374" highlightarea="3,180,57,194" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="505,515,126,374" />
+        <VitalityMultiplier type="burn" multiplier="1.0" />
+      </Limb>
+      <Limb name="RightLeg">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="253,0,126,374" highlightarea="68,180,57,194" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="253,515,126,374" />
+        <VitalityMultiplier type="burn" multiplier="1.0" />
+      </Limb>
+    </health>
+    <inventory arrowslot="9" Slots="Card, Headset, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, HealthInterface" AccessibleWhenAlive="True" Commonness="1" />
+    <Heads>
+      <Head tags="head1,male" sheetindex="0,0" />
+      <Head tags="head2,male" sheetindex="1,0" />
+      <Head tags="head3,male" sheetindex="2,0" />
+      <Head tags="head4,male" sheetindex="3,0" />
+      <Head tags="head5,male" sheetindex="0,1" />
+      <Head tags="head6,male" sheetindex="1,1" />
+      <Head tags="head7,male" sheetindex="2,1" />
+      <Head tags="head8,male" sheetindex="3,1" />
+      <Head tags="head9,male" sheetindex="0,2" />
+      <Head tags="head10,male" sheetindex="1,2" />
+      <Head tags="head11,male" sheetindex="2,2" />
+      <Head tags="head12,male" sheetindex="3,2" />
+      <Head tags="head13,male" sheetindex="0,3" />
+      <Head tags="head14,male" sheetindex="1,3" />
+      <Head tags="head15,male" sheetindex="2,3" />
+      <Head tags="head16,male" sheetindex="3,3" />
+      <Head tags="head1,female" sheetindex="0,0" />
+      <Head tags="head2,female" sheetindex="1,0" />
+      <Head tags="head3,female" sheetindex="2,0" />
+      <Head tags="head4,female" sheetindex="3,0" />
+      <Head tags="head5,female" sheetindex="0,1" />
+      <Head tags="head6,female" sheetindex="1,1" />
+      <Head tags="head7,female" sheetindex="2,1" />
+      <Head tags="head8,female" sheetindex="3,1" />
+      <Head tags="head9,female" sheetindex="0,2" />
+      <Head tags="head10,female" sheetindex="1,2" />
+      <Head tags="head11,female" sheetindex="2,2" />
+      <Head tags="head12,female" sheetindex="3,2" />
+      <Head tags="head13,female" sheetindex="0,3" />
+      <Head tags="head14,female" sheetindex="1,3" />
+      <Head tags="head15,female" sheetindex="2,3" />
+      <Head tags="head16,female" sheetindex="3,3" />
+    </Heads>
+    <Vars>
+      <Var var="GENDER" tags="female,male" />
+    </Vars>
+    <MenuCategory var="GENDER" />
+    <Pronouns var="GENDER" />
+    <HeadAttachments />
+    <StatusEffect type="OnActive" target="this">
+      <Conditional HealthPercentage="lte 100" />
+      <ReduceAffliction type="damage" amount="0.25" />
+      <ReduceAffliction type="bleeding" amount="0.09" />
+    </StatusEffect>
+    <PeriodicEffect mininterval="30" maxinterval="60">
+      <StatusEffect type="OnActive" target="this">
+        <Conditional HealthPercentage="lte 30" />
+        <Sound file="Content/Characters/Husk/HUSK_idle1.ogg" range="100" volume="0.5" selectionmode="Random" />
+        <Sound file="Content/Characters/Husk/HUSK_idle2.ogg" range="100" volume="0.5" />
+        <Sound file="Content/Characters/Husk/HUSK_idle3.ogg" range="100" volume="0.5" />
+        <Sound file="Content/Characters/Husk/HUSK_idle4.ogg" range="100" volume="0.5" />
+      </StatusEffect>
+    </PeriodicEffect>
+  </Character>
+</override>

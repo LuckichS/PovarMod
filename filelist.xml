@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Povarmod"  corepackage="false" modversion="1.0.47" gameversion="1.7.7.0" installtime="1743461741" >
+  <Jobs file="%ModDir%/Job/Jobs.xml" />
+  <TalentTrees file="%ModDir%/Job/TalentTrees.xml" />
+  <Afflictions file="%ModDir%/Job/TalentAfflictions.xml" />
+  <Talents file="%ModDir%/Job/Talents.xml" />
+
+  <!--
+<Character file="%ModDir%/Characters/human/Character.xml"/>
+  <Character  file="%ModDir%/Content/Characters/Mudraptor/Mudraptor.xml" />-->
+  
+  <Character file="%ModDir%/Characters/Husk_player/Husk_player.xml" />
+  <Character file="%ModDir%/Characters/Husk_player_exosuit/Husk_player_exosuit.xml" />
+  <Character file="%ModDir%/Characters/Husk_player_prowler/Husk_player_prowler.xml" />
+  <Character file="%ModDir%/Characters/Husk_player_chimera/Husk_player_chimera.xml" />
+  <Item file="%ModDir%/Items/Huskitems.xml" />
+  <Item file="%ModDir%/Items/Povaritems.xml" />
+  <Item file="%ModDir%/Items/food/food.xml" />
+  <Text file="%ModDir%/Language/Russian/Russian.xml" />
+  <NPCConversations file="%ModDir%/Language/HHConversations_English.xml" />
+</contentpackage>

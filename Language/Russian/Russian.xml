@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Russian">
+  <jobName.PlayerPovarJob>Povar</jobName.PlayerPovarJob>
+  <jobdescription.PlayerPovarJob>Повар спрашивает повара</jobdescription.PlayerPovarJob>
+
+  <talentname.slasher>Рубака</talentname.slasher>
+  <talentdescription.slasher>Вы фигачите кухонным ножом на 200% сильнее. После 2 порезок даст опыта. После ещё 4 порезок даст будешь резать.</talentdescription.slasher>
+
+  <talentname.hannibal>Канибал</talentname.hannibal>
+  <talentdescription.hannibal>Вы канибал</talentdescription.hannibal>
+
+  <talentname.sushimaster>Суши-мастер</talentname.sushimaster>
+  <talentdescription.sushimaster>Вы Суши-мастер</talentdescription.sushimaster>
+
+  <talentname.fearofinevitable>Страх неизбежного</talentname.fearofinevitable>
+  <talentdescription.fearofinevitable>Вы боитесь неизбежного</talentdescription.fearofinevitable>
+
+  <talentname.barkbeetle>Короед</talentname.barkbeetle>
+  <talentdescription.barkbeetle>Вы едите кору</talentdescription.barkbeetle>
+
+  <talentname.expBaton>Опытный батон</talentname.expBaton>
+  <talentdescription.expBaton>Открывает рецепт опытного батона</talentdescription.expBaton>
+  <entityname.expbaton>Опытный батон</entityname.expbaton>
+
+  <skillname.cooking>Готовка</skillname.cooking>
+
+<entityname.hh_brainslug>Слизень Хаска</entityname.hh_brainslug>
+  <entitydescription.hh_brainslug>Гротескная масса пульсирующей слизи, для чего она?</entitydescription.hh_brainslug>
+  <entityname.hh_eggextractor>Инструмент для извлечения яйца Велонацепса</entityname.hh_eggextractor>
+  <entitydescription.hh_eggextractor>Средневековый инструмент для извлечения яиц из живого дружелюбного хаска. Может быть смертельным в случае злоупотребления.</entitydescription.hh_eggextractor>
+  <fabricationheader.hh_eggextractor_recycle>Инструмент для извлечения яйца Велонацепса (Переработка)</fabricationheader.hh_eggextractor_recycle>
+  <fabricationdescription.hh_eggextractor_recycle>Средневековый инструмент для извлечения яиц из живого дружелюбного хаска. Может быть смертельным в случае злоупотребления.</fabricationdescription.hh_eggextractor_recycle>
+  <afflictionname.HHSymbiosisBuff>Липкая слизь</afflictionname.HHSymbiosisBuff>
+  <afflictiondescription.HHSymbiosisBuff>Слой странной, липкой слизи покрывает вашу кожу. Она теплая, резиновая и не сотрется. Вы чувствуете себя странно укрепленным под ее скользящим объятием, но ваше желудок скручивается от мысли о том, из чего она сделана.</afflictiondescription.HHSymbiosisBuff>
+  <afflictionname.HHFeelsWeirdManBuff>Проникающая селитра</afflictionname.HHFeelsWeirdManBuff>
+  <afflictiondescription.HHFeelsWeirdManBuff>Ваши раны запечатаны какой-то волокнистой, свернувшейся материей, которая слегка пахнет гниющей водорослью. Она запечатывает вас, да, но какой ценой? Мысль о чужой плоти, сливаясь с вашей, тревожит.</afflictiondescription.HHFeelsWeirdManBuff>
+  <afflictionname.HHBestFriendsBuff>Свернувший комфорт</afflictionname.HHBestFriendsBuff>
+  <afflictiondescription.HHBestFriendsBuff>Вязкая пленка расползается по вашему костюму и коже, давая небольшое облегчение от кислоты, ожогов и безумия. Тем не менее, защитная пленка движется едва заметно, как будто живая. Утешение кажется пустым, как будто вы соучастник чего-то невыразимого.</afflictiondescription.HHBestFriendsBuff>
+  <afflictionname.HHLackOfHeartBuff>Бледное дыхание</afflictionname.HHLackOfHeartBuff>
+  <afflictiondescription.HHLackOfHeartBuff>Приглушенный хрип преследует ваши уши, когда вы вдыхаете. Воздух странно плотный, но легче дышать. Холод проникает в ваши легкие, как будто что-то другое дышит через вас, помогая вам выжить... но почему?</afflictiondescription.HHLackOfHeartBuff>
+  <afflictionname.HHSlipstreamSecretionBuff>Скользкие щупальца</afflictionname.HHSlipstreamSecretionBuff>
+  <afflictiondescription.HHSlipstreamSecretionBuff>Ваши движения становятся странно плавными, как будто масляные щупальца направляют ваши конечности. Это как будто какая-то зловонная мембрана покрывает ваши суставы, облегчая ваше движение, напоминая вам, что вы не одни.</afflictiondescription.HHSlipstreamSecretionBuff>
+  <afflictionname.HHGuardianAngelBuff>,Шепот мясного щита</afflictionname.HHGuardianAngelBuff>
+  <afflictiondescription.HHGuardianAngelBuff>Что-то пульсирует под вашей кожей, когда угроза приближается. Вы легче переносите удары, но ощущение тянущей, пульсирующей плоти, которая не ваша, наполняет вас извращенной благодарностью и затяжной тошнотой.</afflictiondescription.HHGuardianAngelBuff>
+  <afflictionname.HHExtractedEggsDebuff>Извлеченные яйца</afflictionname.HHExtractedEggsDebuff>
+  <afflictiondescription.HHExtractedEggsDebuff>Кто-то насильно извлек ваши яйца, вам понадобится время для восстановления или рискните погибнуть.</afflictiondescription.HHExtractedEggsDebuff>
+</infotexts>

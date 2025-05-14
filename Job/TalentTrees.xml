@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TalentTrees>
+  <TalentTree jobidentifier="PlayerPovarJob">
+    <SubTree identifier="PHTree" nameidentifier="talenttree.primary" type="primary">
+      <TalentOptions requiredtalents="2" maxchosentalents="3">
+        <TalentOption identifier="ExpBaton" />
+        <TalentOption identifier="skill3" />
+        <TalentOption identifier="skill1" />
+        
+      </TalentOptions>
+      <TalentOptions requiredtalents="2" maxchosentalents="3">
+        <TalentOption identifier="skill4" />
+        <TalentOption identifier="skill5" />
+        <TalentOption identifier="skill6" />
+      </TalentOptions>
+    </SubTree>
+    <SubTree identifier="butcher" type="specialization" requires="PHTree" blocks="vetka2,vetka3">
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="slasher" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="hannibal" />
+        <TalentOption identifier="sushimaster" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <!--<TalentOption identifier="metallinedveins" />-->
+        <TalentOption identifier="fearofinevitable" />
+        <TalentOption identifier="barkbeetle" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="EndOfTheLine" />
+      </TalentOptions>
+    </SubTree>
+    <SubTree identifier="vetka2" type="specialization" requires="PHTree" blocks="butcher,vetka3">
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="vetka2skill1" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="vetka2skill2" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="vetka2skill3" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="EndOfTheLine" />
+      </TalentOptions>
+    </SubTree>
+    <SubTree identifier="vetka3" type="specialization" requires="PHTree" blocks="butcher,vetka2">
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="vetka3skill1" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="vetka3skill2" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="vetka3skill3" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="1">
+        <TalentOption identifier="EndOfTheLine" />
+      </TalentOptions>
+    </SubTree>
+  </TalentTree>
+</TalentTrees>

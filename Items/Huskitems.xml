@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Husk Job" identifier="huskstartitem" category="Equipment" Tags="smallitem,clothing" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" nonplayerteaminteractable="False">
+    <InventoryIcon texture="%ModDir%/Job/PlayerHuskIcons.png" sourcerect="257,0,100,100" />
+    <Body width="85" height="90" density="40" />
+    <Sprite name="Security Vest Item" texture="Content/Items/Jobgear/Mechanic/safetyharness.png" sourcerect="14,45,103,180" depth="0.6" origin="0.5,0.35" />
+    <Wearable slots="Any,Head" msg="ItemMsgPickUpSelect">
+      <sprite name="Security Vest Wearable" texture="Content/Items/Jobgear/Mechanic/safetyharness.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="14,45,103,180" />
+      <StatusEffect type="OnWearing" target="this">
+        <RemoveItem />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="this">
+        <RemoveItem />
+      </StatusEffect>
+    </Wearable>
+  </Item>
+  <Item identifier="hh_brainslug" category="Medical" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" nonplayerteaminteractable="False" RequireAimToUse="True">
+    <InventoryIcon texture="Content/Characters/Husk_chimera/Husk_chimera.png" sourcerect="592,119,112,46" />
+    <Body width="40" height="20" density="20" />
+    <Sprite name="Husk slug" texture="Content/Characters/Husk_chimera/Husk_chimera.png" sourcerect="592,119,112,46" depth="0.6" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="5" requiresrecipe="true" amount="1">
+      <RequiredItem identifier="huskeggsbasic" />
+    </Fabricate>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="5" requiresrecipe="true" amount="1">
+      <RequiredItem identifier="huskeggs" />
+    </Fabricate>
+    <Wearable slots="Any,Head" msg="ItemMsgPickUpSelect">
+      <sprite name="Husk slug" texture="Content/Characters/Husk_chimera/Husk_chimera.png" limb="Head" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="592,119,112,46" />
+      <StatusEffect type="OnWearing" target="Character">
+        <Conditional IsHuman="true" />
+        <Affliction limb="Head" identifier="internaldamage" strength="0.2" />
+      </StatusEffect>
+    </Wearable>
+    <MeleeWeapon canBeCombined="false" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true"></MeleeWeapon>
+  </Item>
+  <Item identifier="hh_eggextractor" category="Medical" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" nonplayerteaminteractable="False" RequireAimToUse="True">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="128,384,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="278,157,50,9" depth="0.55" origin="0.5,0.5" />
+    <Body width="50" height="15" density="10" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="25" requiresrecipe="true" amount="1">
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="5" requiresrecipe="true" amount="1" displayname="recycleitem">
+      <RequiredItem identifier="hh_eggextractor" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.hh_eggextractor_recycle" header="fabricationheader.hh_eggextractor_recycle" />
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <MeleeWeapon canBeCombined="false" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="50" />
+      <StatusEffect type="OnUse" target="This" Condition="-20.0" />
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" comparison="or">
+        <Conditional speciesname="Husk_player" />
+        <Conditional speciesname="Husk_player_prowler" />
+        <Conditional speciesname="Husk_player_exosuit" />
+        <Conditional speciesname="Husk_player_chimera" />
+        <Affliction identifier="HHExtractedEggsDebuff" amount="700" DivideByLimbCount="False" MultiplyByMaxVitality="False" />
+        <Affliction identifier="internaldamage" strength="1" DivideByLimbCount="True" MultiplyByMaxVitality="True" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" comparison="or">
+        <Conditional speciesname="Husk_player" />
+        <Conditional speciesname="Husk_player_prowler" />
+        <Conditional speciesname="Husk_player_exosuit" />
+        <Conditional speciesname="Husk_player_chimera" />
+        <Affliction identifier="HHExtractedEggsDebuff" amount="1000" DivideByLimbCount="False" MultiplyByMaxVitality="False" />
+        <ParticleEmitter particle="vomitsplash" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />
+        <Affliction identifier="internaldamage" strength="2" DivideByLimbCount="True" MultiplyByMaxVitality="True" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" delay="0.05">
+        <RequiredAffliction identifier="HHExtractedEggsDebuff" />
+        <Conditional HHExtractedEggsDebuff="lt 1100.0" />
+        <SpawnItem identifiers="huskeggs" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </MeleeWeapon>
+    <ItemContainer hideitems="true" capacity="1" drawinventory="true" canbeselected="true" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="false" containedstateindicatorstyle="tank">
+      <Containable items="huskeggs" />
+    </ItemContainer>
+  </Item>
+  <Item name="" identifier="hh_exosuit_backpack" category="Equipment" tags="mediumitem,mobilecontainer,largemobilecontainer,tool" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_soft">
+    <InventoryIcon texture="Content/Items/Tools/tools.png" sourcerect="3,259,68,110" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="3,259,68,110" depth="0.6" />
+    <Body width="60" height="100" density="15" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="false">
+      <StatusEffect type="OnWearing" target="Character" setvalue="true" disabledeltatime="true" />
+      <sprite name="Backpack" CanBeHiddenByOtherWearables="false" CanBeHiddenByItem="deepdivinglarge" texture="Content/Items/Tools/tools.png" sourcerect="3,259,68,110" limb="Torso" depthlimb="Waist" inherittexturescale="true" origin="1.1,0.5" />
+    </Wearable>
+    <ItemContainer capacity="16" maxstacksize="32" depth="0.5">
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier" />
+    </ItemContainer>
+  </Item>
+</Items>
