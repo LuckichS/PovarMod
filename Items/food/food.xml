@@ -12,7 +12,7 @@
     </Price>
     <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="200" fabricationlimitmin="5" fabricationlimitmax="10"/>
     
-    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+    <Fabricate suitablefabricators="he-brewkettle" requiredtime="10" requiresrecipe="false">
       <RequiredSkill identifier="weapons" level="1" />
       <RequiredItem identifier="expbaton" amount="1" />
     </Fabricate>
